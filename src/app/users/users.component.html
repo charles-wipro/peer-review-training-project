@@ -1,0 +1,36 @@
+<div class="col-md-6">
+  <h3>Enter New User</h3>
+  <hr>
+  <div class="input-group" style="margin-bottom: 20px">
+    <span class="input-group-addon">Username</span>
+    <input type="text" class="form-control" [(ngModel)]="newUserName">
+  </div>
+  <div class="input-group" style="margin-bottom: 20px">
+    <span class="input-group-addon">Email</span>
+    <input type="email" class="form-control" [(ngModel)]="newUserEmail">
+  </div>
+  <div class="input-group" style="margin-bottom: 20px">
+    <span class="input-group-addon">Password&nbsp;</span>
+    <input type="text" class="form-control" [(ngModel)]="newUserPassword">
+  </div>
+  <div class="input-group" style="margin-bottom: 20px">
+    <div class="input-group-btn">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Role&nbsp;&nbsp;&nbsp;&nbsp; <span class="caret">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></button>
+      <ul class="dropdown-menu">
+        <li><a *ngFor="let role of users" (click)="onSetNewUserRole(role.title)">{{role.title}}</a></li>
+      </ul>
+    </div>
+    <input type="text" class="form-control" aria-label="..." [(ngModel)]="newUserRole">
+  </div>
+  <div class="input-group">
+      <button class="btn btn-primary" (click)="onNewUserAdded()">Submit</button>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <h3>Current Users</h3>
+  <hr>
+  <div class="list-group">
+    <button type="button" class="list-group-item" *ngFor="let user of users">{{user.username}}</button>
+  </div>
+</div>

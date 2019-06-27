@@ -1,0 +1,12 @@
+<app-header [selectedRole]="role" (logoutEvent)="onLogOut()"></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <app-welcome
+                (loginSubmit)="onSubmitteded($event)"
+                *ngIf="loginStatus.status !== 'successful'">
+            </app-welcome>
+            <app-dashboard *ngIf="loginStatus.status === 'successful'"></app-dashboard>
+        </div>
+    </div>
+</div>

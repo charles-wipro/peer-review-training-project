@@ -1,0 +1,10 @@
+li.dropdown {
+    pointer-events: none;
+    opacity: .5;
+    font-weight: 100;
+}
+.activeRole {
+    pointer-events: initial!important;
+    opacity: initial!important;
+    font-weight: 700!important;
+}

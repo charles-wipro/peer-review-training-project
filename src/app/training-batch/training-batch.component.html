@@ -1,0 +1,31 @@
+<div class="col-md-6">
+  <h3>Enter New Batch</h3>
+  <hr>
+  <div class="input-group" style="margin-bottom: 20px">
+    <span class="input-group-addon">Batch Name</span>
+    <input type="text" class="form-control">
+  </div>
+  <div class="input-group" style="margin-bottom: 5px">
+    <span class="input-group-addon">Trainees</span>
+    <input type="text" class="form-control" style="width: 84%">
+  </div>
+  <button class="btn btn-info" style="float:right;margin-top: -39px">Enter</button>
+  <div class="list-group">
+      <ul class="nav nav-pills">
+        <li *ngFor="let names of currentTrainees"><button role="presentation" class="btn btn-default">{{names.username}} <span>&times;</span></button></li>
+      </ul>
+  </div>
+  <div class="input-group">
+      <button class="btn btn-primary">Submit</button>
+  </div>
+</div>
+<div class="col-md-6">
+  <h3>Current Batches</h3>
+  <hr>
+  <div class="list-group">
+    <button type="button" class="list-group-item" *ngFor="let batch of batches">
+      {{batch.batchName}}
+      <button class="btn btn-info" style="float: right">Edit</button>
+    </button>
+  </div>
+</div>
